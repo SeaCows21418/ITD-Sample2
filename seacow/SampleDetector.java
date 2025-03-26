@@ -83,6 +83,28 @@ public class SampleDetector {
         return new MatOfFloat4(mat);
     }
 
+    public MatOfFloat4 drawBestTarget(Target bestT) {
+        Mat mat = new Mat(targetL.size(), 1, CvType.CV_32FC4);
+        int row = 0;
+        Point pt;
+        double angle;
+        double theta;
+        double radius;
+        Point xy;
+        
+            theta = Math.toRadians(bestT.thetaDegrees);
+            float[] line = {(float)(bestT.centroid.x + 10.0*Math.cos(theta)),
+                    (float)(bestT.centroid.y - 10.0*Math.sin(theta)),
+                    (float)(bestT.centroid.x - 10.0*Math.cos(theta)),
+                    (float)(bestT.centroid.y + 10.0*Math.sin(theta))};
+            mat.put(row++, 0, line);
+
+            System.out.println(String.format("target: th:%3d centroid(%3d,%3d)",
+                    bestT.thetaDegrees, bestT.centroid.x, bestT.centroid.y));
+        
+        return new MatOfFloat4(mat);
+    }
+
     /**
      *  Constructor
      *  @param lineMat   Mat of line segments

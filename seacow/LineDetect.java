@@ -71,8 +71,13 @@ public class LineDetect {
                  Imgproc.COLOR_BGR2HSV  // int - code space conversion code
          );
          // Create masking Mat msk of all pixels within Scalar boundaries
-         Scalar lowerb = new Scalar (15, 100, 100);
-         Scalar upperb = new Scalar (31, 255, 255);
+         Scalar lowerb = new Scalar(0, 100, 100);
+         //Blue scalar low: new Scalar (90, 50, 50); 
+         // Yellow scalar low: new Scalar (15, 100, 100);
+
+         // Yellow scalar high: new Scalar (31, 255, 255);
+         //Blue scalar high: new Scalar (140, 255, 255);
+         Scalar upperb =  new Scalar(10, 255, 255);
          Core.inRange(
                  hsv,       // Mat    - input Mat
                  lowerb,    // Scalar - inclusive lower boundary scalar
@@ -253,7 +258,7 @@ public class LineDetect {
         samplesImg2 = sourceImg.clone();
 
         ls.drawSegments(samplesImg2, sd.drawBestTarget(bestTarget));
-        Imgcodecs.imwrite(fileShorthand + "_8_bestTargetCentriod.jpg", samplesImg2);
+        Imgcodecs.imwrite("LinesDetect_8_bestTargetCentriod.jpg", samplesImg2);
 
 
 
