@@ -2,6 +2,7 @@ package seacow;
 
 import java.util.Comparator;
 import java.util.*;
+import static seacow.LineDetect.FOCAL_POINT;
 
 public class TargetComparator implements Comparator<Target>
 {

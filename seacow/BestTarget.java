@@ -16,6 +16,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.Comparator;
 
+import static seacow.LineDetect.FOCAL_POINT;
+
 public class BestTarget
 {
 

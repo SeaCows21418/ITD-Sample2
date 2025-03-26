@@ -34,8 +34,7 @@ public class LineDetect {
 
    public static final double LONG_LENGTH = 50.0;
    public static final double SHORT_SQUARED = (0.5*LONG_LENGTH*1.5/3.5)*(0.5*LONG_LENGTH*1.5/3.5);
-
-
+   
    public static void main(String args[]) {
       try {
          //Loading the OpenCV core library

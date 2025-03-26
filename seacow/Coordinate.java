@@ -22,6 +22,15 @@ public class Coordinate {
         return Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
     }
 
+    public static double distance(Point a, Coordinate b) {
+        double x1 = (double)a.x;
+        double y1 = (double)a.y;
+        double x2 = (double)b.x;
+        double y2 = (double)b.y; 
+        return Math.sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+    }
+
+
     /**
      * Utility method to find distance between two Points
      * @param a - 1st given Point
