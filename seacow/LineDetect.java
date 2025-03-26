@@ -233,6 +233,31 @@ public class LineDetect {
          ls.drawSegments(samplesImg, sd.targetL.centroidsFromTargetList());
          Imgcodecs.imwrite("LinesDetect_7_centroidsTargets.jpg", samplesImg);
 
+         //best target selection
+         System.out.println("Target List:");
+
+         for(Target target : sd.targetL)
+         {
+         System.out.println(target);
+
+         }
+
+
+         BestTarget targetSelector = new BestTarget(sd.targetL);
+        //targetSelector.CompileFakeTargetList();
+
+        Target bestTarget = targetSelector.bestTarget_v2();
+        System.out.println(bestTarget);
+
+        //Draw best target
+        Mat samplesImg2 = new Mat(image.getHeight(), image.getWidth(), CvType.CV_8UC3);
+        samplesImg2 = sourceImg.clone();
+
+        ls.drawSegments(samplesImg2, sd.drawBestTarget(bestTarget));
+        Imgcodecs.imwrite(fileShorthand + "_8_bestTargetCentriod.jpg", samplesImg2);
+
+
+
 
       } catch (Exception e) {
         System.out.println("error: " + e.getMessage());
