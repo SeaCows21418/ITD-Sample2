@@ -71,13 +71,15 @@ public class LineDetect {
                  Imgproc.COLOR_BGR2HSV  // int - code space conversion code
          );
          // Create masking Mat msk of all pixels within Scalar boundaries
-         Scalar lowerb = new Scalar(0, 100, 100);
-         //Blue scalar low: new Scalar (90, 50, 50); 
-         // Yellow scalar low: new Scalar (15, 100, 100);
+         // Red Scalar lowerb = new Scalar(0, 100, 100);
+         // Blue Scalar lowerb = new Scalar (90, 50, 50); 
+         // Yellow 
+         Scalar lowerb = new Scalar (15, 100, 100);
 
-         // Yellow scalar high: new Scalar (31, 255, 255);
-         //Blue scalar high: new Scalar (140, 255, 255);
-         Scalar upperb =  new Scalar(10, 255, 255);
+         // Yellow 
+         Scalar upperb = new Scalar (31, 255, 255);
+         // Blue Scalar upperb = new Scalar (140, 255, 255);
+         // Red Scalar upperb =  new Scalar(10, 255, 255);
          Core.inRange(
                  hsv,       // Mat    - input Mat
                  lowerb,    // Scalar - inclusive lower boundary scalar
